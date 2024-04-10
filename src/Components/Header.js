@@ -27,3 +27,4 @@ function Header({ user }) {
     </header>
   );
 }
+export default Header;

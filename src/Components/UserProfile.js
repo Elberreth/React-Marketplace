@@ -26,11 +26,11 @@ function Header() {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('token'); 
-    setUser(null); 
-    setLoggedIn(false); 
    
-    history.push('/login'); 
+    setUser(null);
+    setLoggedIn(false);
+  };
+
   return (
     <header>
       <h1>Marketplace</h1>

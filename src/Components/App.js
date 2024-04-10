@@ -1,14 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navigation from './Navigation';
 import Home from './Home';
-import Products from './Products';
+import Products from './Categories'; // Adjusted import statement
 import About from './About';
 import UserProfile from './UserProfile';
 import Header from './Header';
-
-
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
   const user = {
@@ -19,7 +16,6 @@ function App() {
   return (
     <Router>
       <div>
-        <Header />
         <Navigation />
         <Switch>
           <Route path="/products">
