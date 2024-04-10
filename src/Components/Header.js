@@ -1,18 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
-function UserProfile({ user }) {
-  return (
-    <div>
-      <p>Welcome, {user.name}!</p>
-      <p>Email: {user.email}</p>
-    </div>
-  );
-}
+import UserProfile from './UserProfile';
 
 function Header({ user }) {
   return (
-    <header>
+    <div>
+      <p>Welcome to Marketplace! Here you can put in your ads for free.</p>
       <h1>Marketplace</h1>
       <nav>
         <ul>
@@ -24,7 +17,9 @@ function Header({ user }) {
       <div>
         <UserProfile user={user} />
       </div>
-    </header>
+    </div>
   );
 }
+
 export default Header;
+
