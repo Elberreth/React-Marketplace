@@ -1,6 +1,6 @@
 
 .header-container {
-  background-color: #f0f0f0;
+  background-color: #1b2026;
   padding: 20px 0;
 }
 
@@ -30,4 +30,11 @@
 
 .header-content nav ul li:last-child {
   margin-right: 0;
+}
+.logo {
+  width: 400px; /* Adjust the width as needed */
+  height: auto; /* Automatically adjust the height to maintain aspect ratio */
+}
+.header-content h1 {
+  color: #f17036; /* Change to the color you prefer */
 }
