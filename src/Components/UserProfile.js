@@ -34,18 +34,15 @@ function Header() {
 
   return (
     <header>
-      <h1>Marketplace</h1>
+      <h1></h1>
       <nav>
         <ul>
          
         </ul>
       </nav>
       <div>
-        {loggedIn ? (
-          <UserProfile user={user} onLogout={handleLogout} />
-        ) : (
-          <button onClick={handleLogin}>Login</button>
-        )}
+      
+        
       </div>
     </header>
   );

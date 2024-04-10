@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import UserProfile from './UserProfile';
-import logo from './Marketplace.jpg'; 
 import './Header.css'; 
+import logo from './Marketplace.jpg'; 
 
 function Header({ user }) {
   return (
     <div className="header-container">
       <div className="header-content">
-        {/* Logo */}
-        <img src={logo} alt="Marketplace Logo" className="logo" />
-
-        {/* Navigation */}
+        <div className="logo-container">
+          <img src={logo} alt="Logo" className="logo" />
+        </div>
         <nav>
           <ul>
             <li><Link to="/">Home</Link></li>
@@ -19,8 +18,6 @@ function Header({ user }) {
             <li><Link to="/about">About</Link></li>
           </ul>
         </nav>
-
-        {/* User Profile */}
         <div>
           <UserProfile user={user} />
         </div>
@@ -30,7 +27,6 @@ function Header({ user }) {
 }
 
 export default Header;
-
 
 
 
