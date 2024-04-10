@@ -4,11 +4,11 @@ const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   
   const products = [
-    { id: 1, name: 'PC', category: 'category1', description: 'Description of PC' },
-    { id: 2, name: '40" TV', category: 'category2', description: 'Description of 40" TV' },
-    { id: 3, name: 'Macbook', category: 'category3', description: 'Description of Macbook' },
-    { id:4, name: 'Compaq', category: 'category3', description: 'Description of Compaq'},
-    {id: 5, name: 'Gaming PC', category: 'category1', description: 'Description of PC' },
+    { id: 1, name: 'PC', price: 999, category: 'category1', description: 'Description of PC' },
+    { id: 2, name: '40" TV', price: 499, category: 'category2', description: 'Description of 40" TV' },
+    { id: 3, name: 'Macbook', price: 1499, category: 'category3', description: 'Description of Macbook' },
+    { id: 4, name: 'Compaq', price: 699, category: 'category3', description: 'Description of Compaq' },
+    { id: 5, name: 'Gaming PC', price: 1199, category: 'category1', description: 'Description of Gaming PC' },
   ];
 
   const categories = {
@@ -35,14 +35,14 @@ const Categories = () => {
         <div>
           <h3>Selected Category: {categories[selectedCategory]}</h3>
           <ul>
-            {products.map(product => (
-              product.category === selectedCategory && (
+            {products
+              .filter(product => product.category === selectedCategory)
+              .map(product => (
                 <li key={product.id}>
-                  {product.name}
-                  <p>{product.description}</p> {/* Description shown for all products */}
+                  {product.name} - ${product.price}
+                  <p>{product.description}</p> 
                 </li>
-              )
-            ))}
+              ))}
           </ul>
         </div>
       )}
@@ -51,4 +51,5 @@ const Categories = () => {
 };
 
 export default Categories;
+
 

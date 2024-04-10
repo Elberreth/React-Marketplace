@@ -1,21 +1,17 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation from './Navigation';
 import Home from './Home';
 import Products from './Categories'; 
 import About from './About';
 import UserProfile from './UserProfile';
 import Header from './Header';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App() {
-  const user = {
-    name: 'John Doe',
-    email: 'john@test.com'
-  };
-
   return (
     <Router>
       <div>
+        <Header />
         <Navigation />
         <Switch>
           <Route path="/products">
@@ -28,7 +24,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
-        <UserProfile user={user} />
+        <UserProfile />
       </div>
     </Router>
   );

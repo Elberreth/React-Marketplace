@@ -18,8 +18,7 @@ function Header() {
   const handleLogin = () => {
   
     const dummyUser = {
-      name: 'John Doe',
-      email: 'john@test.com',
+      
       name: 'test test',
       email: 'test@test.com',
     };
