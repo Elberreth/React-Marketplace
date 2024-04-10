@@ -6,6 +6,7 @@ import Products from './Categories';
 import About from './About';
 import UserProfile from './UserProfile';
 import Header from './Header';
+import './App.css';
 
 function App() {
   return (
