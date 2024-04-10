@@ -6,8 +6,8 @@ const Categories = () => {
   
   
   const products = [
-    { id: 1, name: 'Product 1', category: 'category1' },
-    { id: 2, name: 'Product 2', category: 'category2' },
+    { id: 1, name: 'Product 1', category: 'Computers' },
+    { id: 2, name: 'Product 2', category: 'test' },
     { id: 3, name: 'Product 3', category: 'category1' },
     
   ];
@@ -23,9 +23,9 @@ const Categories = () => {
       
       <select value={selectedCategory} onChange={handleCategoryChange}>
         <option value="">Select a category</option>
-        <option value="category1">Category 1</option>
-        <option value="category2">Category 2</option>
-       
+        <option value="category1">Desktop Computers</option>
+        <option value="category2">TV</option>
+        <option value="category3">Laptops</option>
       </select>
 
       

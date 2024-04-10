@@ -4,7 +4,7 @@ function About() {
   return (
     <div>
       <h2>About Us</h2>
-      <p>Welcome to our marketplace! </p>
+      <p>Welcome to  marketplace! </p>
     </div>
   );
 }

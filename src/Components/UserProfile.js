@@ -19,7 +19,9 @@ function Header() {
   
     const dummyUser = {
       name: 'John Doe',
-      email: 'john@test.com'
+      email: 'john@test.com',
+      name: 'test test',
+      email: 'test@test.com',
     };
     setUser(dummyUser);
     setLoggedIn(true);
