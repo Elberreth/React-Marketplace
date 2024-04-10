@@ -1,12 +1,18 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 function Home() {
-  return (
+  const location = useLocation();
+
+  
+  const isHomeRoute = location.pathname === '/';
+
+ 
+  return isHomeRoute ? (
     <div>
-      <h2>Welcome to Marketplace! Here you can put in your adds for free.</h2>
-      
+      <h3>Welcome to Marketplace! Here you can find good products to even better prices.</h3>
     </div>
-  );
+  ) : null;
 }
 
 export default Home;

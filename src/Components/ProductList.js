@@ -30,6 +30,9 @@ function ProductList() {
       </div>
     </div>
   );
+  function handleDetailsClick(product) {
+    console.log('Details button clicked for product:', product);
+  }
 }
 
 export default ProductList;

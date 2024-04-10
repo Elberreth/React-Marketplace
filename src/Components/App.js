@@ -14,14 +14,14 @@ function App() {
         <Header />
         <Navigation />
         <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
           <Route path="/products">
             <Products />
           </Route>
           <Route path="/about">
             <About />
-          </Route>
-          <Route path="/">
-            <Home />
           </Route>
         </Switch>
         <UserProfile />

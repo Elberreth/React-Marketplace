@@ -1,4 +1,4 @@
-/* Header.css */
+
 .header-container {
   background-color: #f0f0f0;
   padding: 20px 0;
@@ -14,7 +14,7 @@
 
 .header-content h1 {
   margin: 0;
-  font-size: 24px;
+  font-size: 50px;
 }
 
 .header-content nav ul {

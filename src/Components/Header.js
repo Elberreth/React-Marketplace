@@ -7,8 +7,8 @@ function Header({ user }) {
   return (
     <div className="header-container">
       <div className="header-content">
-        <p>Welcome to Marketplace! Here you can put in your ads for free.</p>
-        <h1>Marketplace</h1>
+        
+        <h1></h1>
         <nav>
           <ul>
             <li><Link to="/">Home</Link></li>
