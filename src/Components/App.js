@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from './Navigation';
 import Home from './Home';
-import Products from './Categories'; // Adjusted import statement
+import Products from './Categories'; 
 import About from './About';
 import UserProfile from './UserProfile';
 import Header from './Header';
