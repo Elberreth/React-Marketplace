@@ -6,9 +6,9 @@
   }
   
   .product-item {
-    flex: 0 0 calc(33.33% - 20px); /* Bredden på varje produkt */
-    margin: 10px; /* Yttre marginal för varje produkt */
-    border: 1px solid #ccc; /* Kant runt varje produkt */
-    padding: 10px; /* Utfyllnad runt varje produkt */
-    box-sizing: border-box; /* Räkna med kantbredden i produktens totala bredd */
+    flex: 0 0 calc(33.33% - 20px); 
+    margin: 10px; 
+    border: 1px solid #ccc; 
+    padding: 10px;
+    box-sizing: border-box;
   }
