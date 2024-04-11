@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import productImage from './150.png'; // Import the image file
+import productImage from './150.png'; 
+import './Categories.css';
 
 const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -33,19 +34,22 @@ const Categories = () => {
       </select>
 
       {selectedCategory && (
-        <div>
-          <h3>Selected Category: {categories[selectedCategory]}</h3>
-          <ul> 
+        <div className="product-list">
+          <h3>Category: {categories[selectedCategory]}</h3>
+          <div className="product-container">
             {products
               .filter(product => product.category === selectedCategory)
               .map(product => (
-                <li key={product.id}>
-                    <img src={productImage} alt={product.name} />
-                  {product.name} - ${product.price}
-                  <p>{product.description}</p> 
-                </li>
+                <div key={product.id} className="product">
+                  <img src={productImage} alt={product.name} /> 
+                  <div className="product-details">
+                    <p>{product.name}</p>
+                    <p>${product.price}</p>
+                    <p>{product.description}</p> 
+                  </div>
+                </div>
               ))}
-          </ul>
+          </div>
         </div>
       )}
     </div>
@@ -53,6 +57,3 @@ const Categories = () => {
 };
 
 export default Categories;
-
-
-

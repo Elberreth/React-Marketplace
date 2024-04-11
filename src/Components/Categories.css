@@ -1,0 +1,25 @@
+.product-list {
+    margin-top: 20px;
+  }
+  
+  .product-container {
+    display: flex; /* Använd flexbox */
+    flex-wrap: wrap; /* Om produkterna inte får plats på en rad, låt dem vira till nästa rad */
+  }
+  
+  .product {
+    width: 200px; /* Bredden på varje produkt */
+    margin-right: 20px; /* Högermarginal mellan produkter */
+    margin-bottom: 20px; /* Nedermarginal mellan produkter */
+  }
+  
+  .product img {
+    width: 100%; /* Bilden fyller hela utrymmet av produktens bredd */
+  }
+  
+  .product-details {
+    padding: 10px; /* Utfyllnad runt produktens detaljer */
+    background-color: #f9f9f9; /* Bakgrundsfärg för produktens detaljer */
+    border: 1px solid #ddd; /* Kant runt produktens detaljer */
+  }
+  
