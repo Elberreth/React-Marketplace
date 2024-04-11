@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import productImage from './150.png'; 
 import './Categories.css';
+import productImage from './150.png';
 
 const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
-  
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
+
   const products = [
-    { id: 1, name: 'PC', price: 999, category: 'category1', description: 'Description of PC', image: '150.png' },
-    { id: 2, name: '40" TV', price: 499, category: 'category2', description: 'Description of 40" TV', image: '150.png' },
-    { id: 3, name: 'Macbook', price: 1499, category: 'category3', description: 'Description of Macbook', image: '150.png' },
-    { id: 4, name: 'Compaq', price: 699, category: 'category3', description: 'Description of Compaq', image: '150.png' },
-    { id: 5, name: 'Gaming PC', price: 1199, category: 'category1', description: 'Description of Gaming PC', image: '150.png' },
+    { id: 1, name: 'PC', price: 999, category: 'category1', description: 'Description of PC', sellerEmail: 'seller1@example.com' },
+    { id: 2, name: '40" TV', price: 499, category: 'category2', description: 'Description of 40" TV', sellerEmail: 'seller2@example.com' },
+    { id: 3, name: 'Macbook', price: 1499, category: 'category3', description: 'Description of Macbook', sellerEmail: 'seller3@example.com' },
+    { id: 4, name: 'Compaq', price: 699, category: 'category3', description: 'Description of Compaq', sellerEmail: 'seller4@example.com' },
+    { id: 5, name: 'Gaming PC', price: 1199, category: 'category1', description: 'Description of Gaming PC', sellerEmail: 'seller5@example.com' },
   ];
 
   const categories = {
@@ -21,6 +23,15 @@ const Categories = () => {
 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
+  };
+
+  const handleDetailsClick = (product) => {
+    setSelectedProduct(product);
+    setShowPopup(true); // Visa popupen när "Details" klickas
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false); // Stäng popupen när användaren klickar på "Stäng"
   };
 
   return (
@@ -34,21 +45,30 @@ const Categories = () => {
       </select>
 
       {selectedCategory && (
-        <div className="product-list">
-          <h3>Category: {categories[selectedCategory]}</h3>
-          <div className="product-container">
+        <div>
+          <h3>Selected Category: {categories[selectedCategory]}</h3>
+          <ul className="product-list">
             {products
               .filter(product => product.category === selectedCategory)
               .map(product => (
-                <div key={product.id} className="product">
-                  <img src={productImage} alt={product.name} /> 
-                  <div className="product-details">
-                    <p>{product.name}</p>
-                    <p>${product.price}</p>
-                    <p>{product.description}</p> 
-                  </div>
-                </div>
+                <li key={product.id} className="product-item">
+                  <img src={productImage} alt={product.name} />
+                  <h4>{product.name}</h4>
+                  <p>Price: ${product.price}</p>
+                  <p>{product.description}</p>
+                  <button onClick={() => handleDetailsClick(product)}>Details</button>
+                </li>
               ))}
+          </ul>
+        </div>
+      )}
+
+      {selectedProduct && showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <span className="close" onClick={handleClosePopup}>&times;</span>
+            <h2>Details</h2>
+            <p>Seller's Email: {selectedProduct.sellerEmail}</p>
           </div>
         </div>
       )}
@@ -57,3 +77,4 @@ const Categories = () => {
 };
 
 export default Categories;
+
