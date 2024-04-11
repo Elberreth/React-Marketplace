@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import UserProfile from './UserProfile';
 import './Header.css'; 
 import logo from './Marketplace.jpg'; 
+import UserProfile from './UserProfile';
 
-function Header({ user }) {
+
+function Header({ user, loggedIn, onLogin, onLogout }) {
   return (
     <div className="header-container">
       <div className="header-content">
@@ -13,9 +14,14 @@ function Header({ user }) {
         </div>
         <nav>
           <ul>
-            
             <li><Link to="/products">Products</Link></li>
-            <li><Link to="/login">Login</Link></li>
+            <li>
+              {loggedIn ? (
+                <button onClick={onLogout}>Logout</button>
+              ) : (
+                <Link to="/userprofile">Login</Link>
+              )}
+            </li>
             <li><Link to="/signup">Sign Up</Link></li>
           </ul>
         </nav>
@@ -28,6 +34,8 @@ function Header({ user }) {
 }
 
 export default Header;
+
+
 
 
 

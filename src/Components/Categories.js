@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+import productImage from './150.png'; // Import the image file
 
 const Categories = () => {
   const [selectedCategory, setSelectedCategory] = useState('');
   
   const products = [
-    { id: 1, name: 'PC', price: 999, category: 'category1', description: 'Description of PC' },
-    { id: 2, name: '40" TV', price: 499, category: 'category2', description: 'Description of 40" TV' },
-    { id: 3, name: 'Macbook', price: 1499, category: 'category3', description: 'Description of Macbook' },
-    { id: 4, name: 'Compaq', price: 699, category: 'category3', description: 'Description of Compaq' },
-    { id: 5, name: 'Gaming PC', price: 1199, category: 'category1', description: 'Description of Gaming PC' },
+    { id: 1, name: 'PC', price: 999, category: 'category1', description: 'Description of PC', image: '150.png' },
+    { id: 2, name: '40" TV', price: 499, category: 'category2', description: 'Description of 40" TV', image: '150.png' },
+    { id: 3, name: 'Macbook', price: 1499, category: 'category3', description: 'Description of Macbook', image: '150.png' },
+    { id: 4, name: 'Compaq', price: 699, category: 'category3', description: 'Description of Compaq', image: '150.png' },
+    { id: 5, name: 'Gaming PC', price: 1199, category: 'category1', description: 'Description of Gaming PC', image: '150.png' },
   ];
 
   const categories = {
@@ -34,11 +35,12 @@ const Categories = () => {
       {selectedCategory && (
         <div>
           <h3>Selected Category: {categories[selectedCategory]}</h3>
-          <ul>
+          <ul> 
             {products
               .filter(product => product.category === selectedCategory)
               .map(product => (
                 <li key={product.id}>
+                    <img src={productImage} alt={product.name} />
                   {product.name} - ${product.price}
                   <p>{product.description}</p> 
                 </li>
@@ -51,5 +53,6 @@ const Categories = () => {
 };
 
 export default Categories;
+
 
 

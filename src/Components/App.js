@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navigation from './Navigation';
 import Home from './Home';
@@ -8,13 +8,29 @@ import UserProfile from './UserProfile';
 import Header from './Header';
 import './App.css';
 
-
-
 function App() {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [user, setUser] = useState(null);
+
+  const handleLogin = () => {
+    // Implement your login logic here, e.g., fetching user data from an API
+    const dummyUser = {
+      name: 'John Doe',
+      email: 'john@example.com'
+    };
+    setUser(dummyUser);
+    setLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    setLoggedIn(false);
+  };
+
   return (
     <Router>
       <div>
-        <Header />
+        <Header user={user} loggedIn={loggedIn} onLogin={handleLogin} onLogout={handleLogout} />
         <Navigation />
         <Switch>
           <Route exact path="/">
@@ -27,7 +43,7 @@ function App() {
             <About />
           </Route>
         </Switch>
-        <UserProfile />
+        <UserProfile user={user} />
       </div>
     </Router>
   );
