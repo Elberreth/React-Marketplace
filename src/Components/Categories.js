@@ -27,11 +27,11 @@ const Categories = () => {
 
   const handleDetailsClick = (product) => {
     setSelectedProduct(product);
-    setShowPopup(true); // Visa popupen när "Details" klickas
+    setShowPopup(true); 
   };
 
   const handleClosePopup = () => {
-    setShowPopup(false); // Stäng popupen när användaren klickar på "Stäng"
+    setShowPopup(false); 
   };
 
   return (
