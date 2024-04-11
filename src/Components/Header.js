@@ -4,8 +4,18 @@ import './Header.css';
 import logo from './Marketplace.jpg'; 
 import UserProfile from './UserProfile';
 
-
 function Header({ user, loggedIn, onLogin, onLogout }) {
+  // Dummy user data
+  const dummyUser = {
+    name: 'test test',
+    email: 'test@test.com',
+  };
+
+  // Hantera inloggning
+  const handleLogin = () => {
+    onLogin(dummyUser);
+  };
+
   return (
     <div className="header-container">
       <div className="header-content">
@@ -17,9 +27,9 @@ function Header({ user, loggedIn, onLogin, onLogout }) {
             <li><Link to="/products">Products</Link></li>
             <li>
               {loggedIn ? (
-                <button onClick={onLogout}>Logout</button>
+                <Link to="/" onClick={onLogout}>Logout</Link>
               ) : (
-                <Link to="/userprofile">Login</Link>
+                <Link to="/userprofile" onClick={handleLogin}>Login</Link>
               )}
             </li>
             <li><Link to="/signup">Sign Up</Link></li>
@@ -34,6 +44,15 @@ function Header({ user, loggedIn, onLogin, onLogout }) {
 }
 
 export default Header;
+
+
+
+
+
+
+
+
+
 
 
 
