@@ -13,7 +13,7 @@ function App() {
   const [user, setUser] = useState(null);
 
   const handleLogin = () => {
-    // Implement your login logic here, e.g., fetching user data from an API
+   
     const dummyUser = {
       name: 'John Doe',
       email: 'john@example.com'
